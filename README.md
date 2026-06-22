@@ -1,38 +1,20 @@
-# my-blog
+# 个人技术网站
 
-This template should help get you started developing with Vue 3 in Vite.
+## 项目简介
+这是我的个人技术博客与作品集网站，用于展示我的技术栈、项目经历和个人信息。
 
-## Recommended IDE Setup
+## 技术栈
+- **前端**：Vue 3 + Vite + Vue Router
+- **部署**：Cloudflare Pages
+- **版本控制**：Git + GitHub
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+## 本地运行
+```bash
+# 安装依赖
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# 启动开发服务器
 npm run dev
-```
 
-### Compile and Minify for Production
-
-```sh
+# 打包构建
 npm run build
-```
