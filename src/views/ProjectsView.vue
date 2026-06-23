@@ -1,42 +1,57 @@
 <template>
   <div class="projects">
     <h2>我的项目</h2>
-    <div class="project-list">
+
+    <!-- 加载状态 -->
+    <div v-if="loading" class="loading">加载中...</div>
+
+    <!-- 错误状态 -->
+    <div v-if="error" class="error">{{ error }}</div>
+
+    <!-- 项目列表 -->
+    <div v-if="!loading && !error" class="project-list">
       <div class="project-card" v-for="project in projects" :key="project.id">
         <h3>{{ project.name }}</h3>
-        <p>{{ project.desc }}</p>
+        <p>{{ project.description }}</p>
         <div class="tags">
-          <span v-for="tech in project.techs" :key="tech">{{ tech }}</span>
+          <span v-for="tech in project.techStack.split(',')" :key="tech">
+            {{ tech.trim() }}
+          </span>
         </div>
-        <a :href="project.link" target="_blank">查看代码 →</a>
+        <a :href="project.githubUrl" target="_blank">查看代码 →</a>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      projects: [
-        {
-          id: 1,
-          name: '文章管理系统',
-          desc: '基于 Spring Boot + MyBatis + MySQL 的后端系统，实现文章增删改查',
-          techs: ['Java', 'Spring Boot', 'MySQL'],
-          link: 'https://github.com/你的用户名/your-repo'
-        },
-        {
-          id: 2,
-          name: '医院预约管理系统',
-          desc: '课程设计项目，4人团队协作，负责数据库设计和后端逻辑',
-          techs: ['Java', 'MySQL', '团队协作'],
-          link: 'https://github.com/你的用户名/your-repo'
-        }
-      ]
-    }
+<script setup>
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+
+// 数据
+const projects = ref([])
+const loading = ref(true)
+const error = ref(null)
+
+// 获取项目列表
+const fetchProjects = async () => {
+  try {
+    loading.value = true
+    const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/projects`)
+    // 后端返回格式: { code: 200, msg: "success", data: [...] }
+    projects.value = response.data.data
+  } catch (err) {
+    error.value = '加载项目失败，请检查后端服务是否启动'
+    console.error('fetchProjects error:', err)
+  } finally {
+    loading.value = false
   }
 }
+
+// 组件挂载时自动调用
+onMounted(() => {
+  fetchProjects()
+})
 </script>
 
 <style scoped>
@@ -71,5 +86,15 @@ export default {
   margin-top: 12px;
   color: #42b883;
   text-decoration: none;
+}
+.loading {
+  text-align: center;
+  color: #666;
+  padding: 40px;
+}
+.error {
+  text-align: center;
+  color: #e74c3c;
+  padding: 40px;
 }
 </style>
