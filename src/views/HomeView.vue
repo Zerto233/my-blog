@@ -2,7 +2,7 @@
   <div class="home">
     <section class="hero">
       <div class="avatar">
-        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=周艳兴" alt="头像" />
+        <img src="@/assets/avatar.jpg" alt="头像" />
       </div>
       <h1>你好，我是 <span class="highlight">周艳兴</span></h1>
       <p class="subtitle">广东药科大学 · 计算机科学与技术 · 大三</p>
