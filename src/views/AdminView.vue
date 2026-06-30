@@ -89,7 +89,7 @@ const saveProject = async () => {
     const headers = { Authorization: `Bearer ${token}` }
 
     if (editing.value) {
-      await axios.put(`${import.meta.env.VITE_API_BASE_URL}/api/projects/${id}`,
+      await axios.put(`${import.meta.env.VITE_API_BASE_URL}/api/projects/${form.value.id}`,
         form.value,
         { headers }
       )
