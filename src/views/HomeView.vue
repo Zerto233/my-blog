@@ -6,7 +6,7 @@
       </div>
       <h1>你好，我是 <span class="highlight">周艳兴</span></h1>
       <p class="subtitle">广东药科大学 · 计算机科学与技术 · 大三</p>
-      <p class="desc">热爱后端开发，正在探索全栈技术</p>
+      <p class="desc"></p>
 
       <!-- 技术标签 -->
       <div class="tech-tags">
@@ -17,7 +17,7 @@
 
       <!-- 一句话标签 -->
       <div class="badge">
-        🚀 目前正在寻找后端开发实习机会
+        🚀 目前正在寻找实习机会
       </div>
     </section>
   </div>
