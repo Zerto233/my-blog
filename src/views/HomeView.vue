@@ -15,6 +15,16 @@
         </span>
       </div>
 
+      <!-- 🆕 醒目按钮 -->
+      <div class="cta-wrapper">
+        <router-link to="/projects" class="cta-btn">
+          <span>📂 查看我的项目</span>
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </router-link>
+      </div>
+
       <!-- 一句话标签 -->
       <div class="badge">
         🚀 目前正在寻找实习机会
@@ -121,5 +131,45 @@ h1 {
   border-radius: 30px;
   font-size: 14px;
   margin-top: 8px;
+}
+/* CTA 按钮 */
+.cta-wrapper {
+  margin: 28px 0 16px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #42b883, #2d8f5c);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(66, 184, 131, 0.35);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(66, 184, 131, 0.45);
+}
+
+.cta-btn:active {
+  transform: scale(0.97);
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover .arrow-icon {
+  transform: translateX(4px);
 }
 </style>
